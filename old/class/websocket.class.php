@@ -85,7 +85,7 @@ class websocket{
           $len=socket_recv($sign,$buffer,2048,0);
           $k=$this->search($sign);
           $user=$this->users[$k];
-          if($len<7){
+          if($len<1){
             $this->close($sign);
             $eventreturn = array('k'=>$k,'sign'=>$sign);
             $this->eventoutput('out',$eventreturn);
